@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+	--Blanco: #ffffff; /*(título principal, estadísticas)*/
+	--Transparente_Parrafo: #ffffffbf; /*Blanco transparente (párrafo principal)*/
+	--Transparente_Encabezado: #ffffff99; /*blanco transparente (encabezados de estadísticas)*/
+	--Azul_Oscuro: #090b1a; /*(fondo principal)*/
+	--Azul_desaturado_oscuro: #1b1938; /*(fondo de la tarjeta)*/
+	--Violeta_suave: #aa5cdb; /*(acento)*/
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: var(--Azul_Oscuro);
+	font-size: 15px;
+}
+.card {
+	margin: 7% auto;
+	max-width: 70%;
+	background: var(--Azul_desaturado_oscuro);
+	border-radius: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+}
+
+.card_texto {
+	padding: 55px;
+}
+.card_titulo {
+	color: var(--Blanco);
+	font-size: 2.34em;
+	margin-bottom: 30px;
+}
+.titulo_acento {
+	color: var(--Violeta_suave);
+}
+.card_parrafo {
+	color: var(--Transparente_Parrafo);
+	margin-bottom: 60px;
+}
+
+.card_estadistica {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 20px;
+	font-family: 'Lexend Deca';
+	text-transform: uppercase;
+}
+.estadistica {
+	color: var(--Blanco);
+	margin-bottom: 5px;
+}
+.encabezado_estadistica {
+	color: var(--Transparente_Encabezado);
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.card_img {
+	display: flex;
+	background: linear-gradient(#aa5cdba0, #aa5cbba0),
+		url(images/image-header-desktop.jpg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 0 20px 20px 0;
+	width: 100%;
+}
+
+.attribution {
+	font-size: 15px;
+	text-align: center;
+	color: var(--Blanco);
+}
+.attribution a {
+	color: #3e52a3;
+	text-decoration: none;
+}
+
+@media (max-width: 425px) {
+	.card {
+		margin: 10% auto;
+		max-width: none;
+		width: 310px;
+		grid-template-columns: none;
+		grid-template-rows: repeat(3, 229px);
+		grid-template-areas:
+			'img'
+			'text'
+			'text';
+	}
+
+	.card_texto {
+		grid-area: text;
+		padding: 0;
+		margin: 30px 20px;
+		text-align: center;
+	}
+	.card_titulo {
+		color: var(--Blanco);
+		font-size: 1.7rem;
+		margin-bottom: 15px;
+	}
+	.card_parrafo {
+		color: var(--Transparente_Parrafo);
+		margin-bottom: 30px;
+	}
+
+	.card_estadistica {
+		height: 180px;
+		display: flex;
+		flex-direction: column;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	.estadistica {
+		color: var(--Blanco);
+		margin-bottom: 5px;
+		font-size: 22px;
+	}
+	.encabezado_estadistica {
+		color: var(--Transparente_Encabezado);
+		font-size: 11px;
+		font-weight: 100;
+	}
+
+	.card_img {
+		grid-area: img;
+		background: linear-gradient(#aa5cdba0, #aa5cbba0),
+			url(images/image-header-mobile.jpg);
+		background-size: contain;
+		background-position: center;
+		border-radius: 20px 20px 0 0;
+		width: inherit;
+	}
+
+	.attribution {
+		font-size: 15px;
+		text-align: center;
+		color: var(--Blanco);
+	}
+	.attribution a {
+		color: #3e52a3;
+		text-decoration: none;
+	}
+}
